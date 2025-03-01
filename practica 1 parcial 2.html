@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Cooper - Compras en línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('modelos1.jpg'); 
+            background-size: 120%; 
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            width: 200px; /* Ajusta el tamaño de la imagen */
+            display: block;
+            margin: 0 auto; /* Centra la imagen */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        td {
+            padding: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .buttons {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Práctica 1 Luz Elena Mendoza Ramírez</h4>
+        <h1>Mini Cooper</h1>
+        <img src="logo.png" alt="Mini Cooper Logo" class="logo"> 
+        <h3>Compras online</h3>
+        
+        <table>
+            <tr>
+                <td colspan="3"><b>Información general del cliente</b></td>
+            </tr>
+            <tr>
+                <td>Nombre: <input type="text" name="nombre"></td>
+                <td>Apellido paterno: <input type="text" name="apellido_p"></td>
+                <td>Apellido materno: <input type="text" name="apellido_m"></td>
+            </tr>
+            <tr>
+                <td>Nombre de usuario: <input type="text" name="usuario"></td>
+                <td>Password: <input type="password" name="password"></td>
+                <td>Fecha de registro: <input type="date" name="fecha"></td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>Datos para facturar</b></td>
+            </tr>
+            <tr>
+                <td>País: 
+                    <select>
+                        <option>México</option>
+                        <option>Canadá</option>
+                        <option>Reino Unido</option>
+                    </select>
+                </td>
+                <td>Ciudad: 
+                    <select>
+                        <option>San Luis Potosí</option>
+                        <option>Monterrey</option>
+                        <option>Cd. Valles</option>
+                    </select>
+                </td>
+                <td>Número de casa: <input type="number" name="numero_casa"></td>
+            </tr>
+            <tr>
+                <td>Colonia: <input type="text" name="colonia"></td>
+                <td>C.P.: <input type="text" name="cp"></td>
+                <td>Calle: <input type="text" name="calle"></td>
+            </tr>
+            <tr>
+                <td>E-mail: <input type="email" name="email"></td>
+                <td>R.F.C: <input type="text" name="rfc"></td>
+            </tr>
+        </table>
+        <br>
+        <div class="buttons">
+            <input type="checkbox"> Acepto términos y condiciones <br><br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Restablecer</button>
+        </div>
+        <p style="text-align: right;">Febrero 2025, S.L.P.</p>
+    </div>
+</body>
+</html>
