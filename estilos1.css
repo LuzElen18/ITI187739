@@ -1,0 +1,33 @@
+body{
+	/*background-color: lightgray;*/
+}
+table{
+	width: 100%;
+	border: 3px solid #ffc4da;
+	border-collapse: collapse;
+	caption-side: tap;
+}
+td,th{
+	border: 3px solid #ffdeea;
+}
+
+
+table tr:nth-child(odd){
+	background-color: #fcf3f6;
+}
+
+
+table tr:nth-child(even){
+	background-color: #fe97ba;
+}
+
+table tr th{
+	background-color: white;
+
+	color: #ff76a4;
+}
+
+table tr:hover{
+	background-color: pink;
+	color: white;
+}
