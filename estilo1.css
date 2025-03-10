@@ -1,0 +1,28 @@
+ul{
+	list-style-type: none;
+	padding: 12px;
+	margin: 12px;
+	width: 30%;
+	margin: 0px;
+	padding: 0px;
+}      
+
+li a {
+	background-color: #e1caff;
+	color: #6b4aff;
+	display: block;
+	padding: 16px;
+	text-decoration: none;
+}                                                                                                                                               
+
+li a:hover{
+	background-color: #f3d3ff;
+;
+
+}
+
+li .activo{
+	background-color: #c281ff;
+	color: #4b1fff;
+
+}
