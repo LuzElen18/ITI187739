@@ -1,0 +1,57 @@
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.absolutas {
+    border: 4px solid #ffd9e8;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.pixel-ejemplo {
+    font-size: 16px;
+    width: 180px;
+    background: #ffc1da;
+}
+
+.cm-ejemplo {
+    width: 12cm;
+    height: 8cm;
+    background: #ffa6ca;
+}
+
+.relativas {
+    border: 2px solid #ff8ab9;
+    padding: 10px;
+}
+
+.em-ejemplo {
+    font-size: 1.5em;
+    padding: 1em;
+    background: #ff71aa;
+}
+
+.rem-ejemplo {
+    font-size: 1.2rem;
+    width: 50%;
+    background: #ff5298;
+}
+
+.viewport-ejemplo {
+    width: 50vw;
+    height: 20vh;
+    background: #fc2a7f;
+}
+
+body {
+    background-color: #f5eeff;
+} 
+
+body {
+    color: #7e1037;
