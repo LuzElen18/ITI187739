@@ -1,0 +1,72 @@
+/* Oculta el input tipo botón */
+#mostrar {
+  display: none;
+}
+
+/* Estilo general del body */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("fondoexam.jpg"); 
+  background-size: cover;             
+  background-repeat: no-repeat;      
+  background-position: center center; 
+  background-attachment: fixed;
+  padding: 195px;
+  text-align: center;
+  color: white; 
+}
+
+
+h1:first-of-type {
+  color: #db1313; 
+}
+
+h1:nth-of-type(2) {
+  color: #8e0101; 
+}
+
+h4 {
+  color: #640b0b;
+}
+
+
+label[for="mostrar"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #360000;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+
+label[for="mostrar"]:hover {
+  background-color: #d40000;
+}
+
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.imagen img {
+  width: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;      
+}
+
+.imagen img:hover {
+  transform: scale(1.05);
+}
+
+
+label[for="mostrar"]:hover ~ .galeria {
+  display: none;
+}
