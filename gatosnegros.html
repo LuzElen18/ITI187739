@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué opinas de los gatos de color Negro?</title>
+    <link rel="stylesheet" href="estilosgatos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Dame tu opinión sobre Gatitos Negros</h1>
+        
+    </div>
+        
+        <div id="quiz">
+            <div class="question">
+                <h3>1. ¿sabes cunatos michis negros tienen ojos amarillos?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="1"> un 25%</label>
+                    <label><input type="radio" name="q1" value="0"> Casi todos </label>
+                    <label><input type="radio" name="q1" value="0"> Menos del 10 gatos</label>
+                    <label><input type="radio" name="q1" value="0"> Los michis negros siempre tienen ojos verdes...obvio</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>2. ¿Por qué los michis negros son considerados de mala suerte?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="0"> Porque dan mas miedo que otros michis</label>
+                    <label><input type="radio" name="q2" value="1"> Por brujas y lo oculto </label>
+                    <label><input type="radio" name="q2" value="0"> Porque su pelaje, me quita la buena suerte</label>
+                    <label><input type="radio" name="q2" value="0"> Porque son más difíciles de ver de noche...</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>3. ¿Qué ventaja evolutiva puede tener el pelaje negro en los gatos?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="0"> Los hace más atractivos para los humanos</label>
+                    <label><input type="radio" name="q3" value="0"> Les permite absorber más calor en invierno</label>
+                    <label><input type="radio" name="q3" value="1"> Mejor camuflaje para cazar de noche</label>
+                    <label><input type="radio" name="q3" value="0"> Les da una ventaja en la selección sexual</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>4. ¿Sabes que país los michis negros son considerados símbolo de buena suerte?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="0"> Estados Unidos</label>
+                    <label><input type="radio" name="q4" value="0"> Alemania</label>
+                    <label><input type="radio" name="q4" value="1"> Japón</label>
+                    <label><input type="radio" name="q4" value="0"> Francia</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>5. es cieto que si eres soltero, un michi negro te puede atraer una mejor vida amorosa </h3>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="0"> Queee???? estan locos</label>
+                    <label><input type="radio" name="q5" value="1"> Yo si creo </label>
+                </div>
+            </div>
+            
+            <button id="submit">¿Tus respuestas fueron correctas?</button>
+        </div>
+        
+        <div id="results">
+            <h2>cunatas huellitas obtuviste....</h2>
+            <div id="score">Tus huellitas: 0/5</div>
+            <div id="feedback"></div>
+            <div id="chart_div"></div>
+            <div class="cat-fact" id="catFact"></div>
+            <button id="generatePdf" class="pdf-button">revisa tus resultados</button>
+        </div>
+    </div>
+
+    <script src="javagatos.js"></script>
+</body>
+</html>
