@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>OLIVOS - Tienda</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>OLIVOS - Tienda</h1>
+  </header>
+
+  <main>
+    <section id="venta">
+      <h2>Productos Disponibles</h2>
+
+      <!-- ROPA -->
+      <div class="categoria">
+        <h3>ROPA</h3>
+        <div class="producto">
+          <img src="imagenes/Playera Blanca.jpg" alt="Playera Blanca">
+          <p>Playera Blanca</p>
+          <p>Precio: $150</p>
+          <label><input type="radio" name="producto" value="Playera Blanca" data-precio="150"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Talla:
+            <select>
+              <option>CH</option><option>M</option><option>G</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Playera Azul.jpg" alt="Pantalón Azul">
+          <p>Pantalón Azul</p>
+          <p>Precio: $300</p>
+          <label><input type="radio" name="producto" value="Pantalón Azul" data-precio="300"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Talla:
+            <select>
+              <option>CH</option><option>M</option><option>G</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Sudadera Negra.jpg" alt="Sudadera Negra">
+          <p>Sudadera Negra</p>
+          <p>Precio: $450</p>
+          <label><input type="radio" name="producto" value="Sudadera Negra" data-precio="450"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Talla:
+            <select>
+              <option>CH</option><option>M</option><option>G</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- OLIVO KIDS -->
+      <div class="categoria">
+        <h3>OLIVO KIDS</h3>
+        <div class="producto">
+          <img src="imagenes/Set Infanitl.jpg" alt="Set Infantil">
+          <p>Set Infantil</p>
+          <p>Precio: $350</p>
+          <label><input type="radio" name="producto" value="Set Infantil" data-precio="350"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Edad:
+            <select>
+              <option>1-3 años</option><option>4-6 años</option><option>7-10 años</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Set figuras.jpeg" alt="Juguete Educativo">
+          <p>Juguete Educativo</p>
+          <p>Precio: $200</p>
+          <label><input type="radio" name="producto" value="Juguete Educativo" data-precio="200"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Edad:
+            <select>
+              <option>1-3 años</option><option>4-6 años</option><option>7-10 años</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Ropa Infantil.jpeg" alt="Ropa Niño">
+          <p>Ropa Niño</p>
+          <p>Precio: $250</p>
+          <label><input type="radio" name="producto" value="Ropa Niño" data-precio="250"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Talla:
+            <select>
+              <option>1</option><option>2</option><option>3</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- SKINCARE -->
+      <div class="categoria">
+        <h3>SKINCARE</h3>
+        <div class="producto">
+          <img src="imagenes/Crema Facial.jpg" alt="Crema Facial">
+          <p>Crema Facial</p>
+          <p>Precio: $180</p>
+          <label><input type="radio" name="producto" value="Crema Facial" data-precio="180"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tipo de piel:
+            <select>
+              <option>Grasa</option><option>Seca</option><option>Mixta</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Tonico Facial.jpg" alt="Tónico Facial">
+          <p>Tónico Facial</p>
+          <p>Precio: $160</p>
+          <label><input type="radio" name="producto" value="Tónico Facial" data-precio="160"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tipo de piel:
+            <select>
+              <option>Grasa</option><option>Seca</option><option>Mixta</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Mascarilla de Carbon.jpg" alt="Mascarilla de Carbón">
+          <p>Mascarilla de Carbón</p>
+          <p>Precio: $120</p>
+          <label><input type="radio" name="producto" value="Mascarilla de Carbón" data-precio="120"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tipo de piel:
+            <select>
+              <option>Grasa</option><option>Seca</option><option>Mixta</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- PERFUMES -->
+      <div class="categoria">
+        <h3>PERFUMES</h3>
+        <div class="producto">
+          <img src="imagenes/Floral-Rose-Floralcy-Rose_5d17a504-d72d-4676-9495-333c66e5d0fc.webp" alt="Perfume Floral">
+          <p>Perfume Floral</p>
+          <p>Precio: $320</p>
+          <label><input type="radio" name="producto" value="Perfume Floral" data-precio="320"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tamaño:
+            <select>
+              <option>30 ml</option><option>50 ml</option><option>100 ml</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Citrus_Green_Apple_Freshness-Fresh_Aquatic.webp" alt="Perfume Cítrico">
+          <p>Perfume Cítrico</p>
+          <p>Precio: $300</p>
+          <label><input type="radio" name="producto" value="Perfume Cítrico" data-precio="300"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tamaño:
+            <select>
+              <option>30 ml</option><option>50 ml</option><option>100 ml</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Perfume Amaderado.png" alt="Perfume Amaderado">
+          <p>Perfume Amaderado</p>
+          <p>Precio: $280</p>
+          <label><input type="radio" name="producto" value="Perfume Amaderado" data-precio="280"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tamaño:
+            <select>
+              <option>30 ml</option><option>50 ml</option><option>100 ml</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- BOLSAS Y MOCHILAS -->
+      <div class="categoria">
+        <h3>BOLSAS Y MOCHILAS</h3>
+
+        <div class="producto">
+          <img src="imagenes/Mochila Casual.jpeg" alt="Mochila Casual">
+          <p>Mochila Casual</p>
+          <p>Precio: $400</p>
+          <label><input type="radio" name="producto" value="Mochila Casual" data-precio="400"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Color:
+            <select>
+              <option>Negro</option><option>Beige</option><option>Verde</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/casa-piel-bolsa-de-piel-dama-mano-sacrlet-rojo-2.webp" alt="Bolsa de Mano">
+          <p>Bolsa de Mano</p>
+          <p>Precio: $350</p>
+          <label><input type="radio" name="producto" value="Bolsa de Mano" data-precio="350"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Color:
+            <select>
+              <option>Rosa</option><option>Negro</option><option>Café</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/Mochila Escolar.jpg" alt="Mochila Escolar">
+          <p>Mochila Escolar</p>
+          <p>Precio: $300</p>
+          <label><input type="radio" name="producto" value="Mochila Escolar" data-precio="300"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Color:
+            <select>
+              <option>Azul</option><option>Rojo</option><option>Amarillo</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- VELAS Y JABONES -->
+      <div class="categoria">
+        <h3>VELAS Y JABONES</h3>
+
+        <div class="producto">
+          <img src="imagenes/vela_soya_ch_energia_cosmica_2.webp" alt="Vela Aromática">
+          <p>Vela Aromática</p>
+          <p>Precio: $180</p>
+          <label><input type="radio" name="producto" value="Vela Aromática" data-precio="180"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Aroma:
+            <select>
+              <option>Lavanda</option><option>Vainilla</option><option>Canela</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/CATALOGOMADRETIERRA_Cambiodefondos.webp" alt="Jabón Natural">
+          <p>Jabón Natural</p>
+          <p>Precio: $100</p>
+          <label><input type="radio" name="producto" value="Jabón Natural" data-precio="100"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Tipo:
+            <select>
+              <option>Avena</option><option>Carbón Activado</option><option>Cítricos</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="producto">
+          <img src="imagenes/il_fullxfull.5303004566_fzze.webp" alt="Set Vela + Jabón">
+          <p>Set Vela + Jabón</p>
+          <p>Precio: $220</p>
+          <label><input type="radio" name="producto" value="Set Vela + Jabón" data-precio="220"> Seleccionar</label>
+          <label>Cantidad: <input type="number" min="1" value="1" class="cantidad"></label>
+          <label>Presentación:
+            <select>
+              <option>Individual</option><option>Doble</option><option>Especial</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Factura -->
+    <section id="factura">
+      <h2>Generar Factura</h2>
+      <form id="facturaForm">
+        <label>Nombre: <input type="text" id="nombre" required></label><br>
+        <label>Correo electrónico: <input type="email" id="correo" required></label><br>
+        <label>RFC: <input type="text" id="rfc" required></label><br>
+        <label>Razón Social: <input type="text" id="razon" required></label><br>
+        <label>Dirección: <input type="text" id="direccion" required></label><br>
+        <label>Banco:
+          <select id="banco" required>
+            <option>BBVA</option>
+            <option>Banorte</option>
+            <option>Santander</option>
+            <option>Citibanamex</option>
+            <option>HSBC</option>
+          </select>
+        </label><br><br>
+
+        <div>
+          <strong>Total: $<span id="total">0</span></strong>
+        </div><br>
+
+        <button type="button" onclick="actualizarTotal()">Calcular Total</button>
+        <button type="button" onclick="generarPDF()">Generar PDF</button>
+      </form>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

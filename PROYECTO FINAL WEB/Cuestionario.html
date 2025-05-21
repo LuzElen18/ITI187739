@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Venta - Bazar</title>
+  <link rel="stylesheet" type="text/css" href="estiloz.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="estiloz.css">
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>-->
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+  <!--INICIO cabecera de la pagina-->
+  <header>
+
+    <div class="container-hero">
+      <div class="container hero">
+
+        <div class="container-logo">
+          <a href="index.html"><img src="imagenes/logoolivo.png"></a>
+          <h1 class="logo"><a href="index.html">Olivo Concept Store</a></h1>
+        </div>
+
+        <div class="container-user">
+          <i class="fa-solid fa-user"></i>
+          <a href="Cuestionario.html"><i class="fa-solid fa-basket-shopping"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-navbar">
+      <nav class="navbar container">
+        <i class="fa-solid fa-bars"></i>
+        <ul class="menu">
+          <li><a href="novedades.html">Novedades</a></li>
+          <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="ropa.html">Ropa</a></li>
+                    <li><a href="olivokids.html">Olivo Kids</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
+                    <li><a href="skincare.html">Skincare</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="bolsasmochilas.html">Bolsas y Mochilas</a></li>
+                    <li><a href="velasjabones.html">Velas y Jabones</a></li>
+                    <li><a href="regalos.html">Obsequios</a></li>
+                    <li><a href="Cuestionario.html">Cuestionario</a></li>
+        </ul>
+
+        
+      </nav>
+    </div>
+  </header>
+<!--FIN cabecera de la pagina-->
+
+<!--INICIO de cuestionario-->
+
+  <h2>Formulario de Facturación</h2>
+  <form id="formulario">
+    <label for="nombre">Nombre del cliente:</label>
+    <input type="text" id="nombre" required>
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" required>
+
+    <h3>Productos por Categoría</h3>
+    <div id="productos-container"></div>
+
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <button type="button" onclick="generarPDF()">Generar Comprobante PDF</button>
+  </form>
+
+  <!--fIN de cuestionario-->
+
+  <!--INICIO footer-->
+  <footer class="footer">
+      <div class="container container-footer">
+        <div class="menu-footer">
+          <div class="contact-info">
+            <p class="title-footer">Información de Contacto</p>
+            <ul>
+              <li>Teléfono: 4442308805</li>
+            </ul>
+            <div class="social-icons">
+              <span class="instagram">
+                <a href="https://www.instagram.com/olivo.conceptstore" target="_blank">
+                <i class="fa-brands fa-instagram"></i></a>
+              </span>
+            </div>
+          </div>
+        
+        </div>
+
+        
+      </div>
+    </footer>
+<!--FIN footer-->
+
+</body>
+
+<script src="https://kit.fontawesome.com/93eccfeecd.js" crossorigin="anonymous"></script>
+</html>
