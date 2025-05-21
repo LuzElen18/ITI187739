@@ -3,22 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulario de Registro</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    #resultado {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-    }
-  </style>
+  <link rel="stylesheet" href="estilosformp2.css">
 </head>
 <body>
 
@@ -26,27 +11,36 @@
 
   <form id="registroForm">
     <label>
-      Nombre:
-      <input type="text" id="nombre" required>
+      Usuario:
+      <input type="text" id="usuario" required>
     </label>
 
     <label>
-      Correo electrónico:
-      <input type="email" id="correo" required>
+      Contraseña:
+      <input type="password" id="contrasena" required>
     </label>
 
     <label>
-      Edad:
-      <input type="number" id="edad" required>
+      Carrera:
+      <select id="carrera" required>
+        <option value="">Selecciona una carrera</option>
+        <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la Información</option>
+        <option value="Ingeniería Telemática">Ingeniería Telemática</option>
+      </select>
     </label>
 
     <label>
       Género:
-      <select id="genero">
+      <select id="genero" required>
+        <option value="">Selecciona género</option>
         <option value="Femenino">Femenino</option>
         <option value="Masculino">Masculino</option>
-        <option value="Otro">Otro</option>
       </select>
+    </label>
+
+    <label>
+      <input type="checkbox" id="terminos" required>
+      Acepto los términos y condiciones
     </label>
 
     <button type="button" onclick="mostrarDatos()">Registrar</button>
@@ -54,8 +48,7 @@
 
   <div id="resultado"></div>
 
-  <!-- Enlace al archivo JavaScript externo -->
-  <script src="script.js"></script>
+  <script src="javaformp2.js"></script>
 
 </body>
 </html>
