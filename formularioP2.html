@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Registro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulario de Registro</h2>
+
+  <form id="registroForm">
+    <label>
+      Nombre:
+      <input type="text" id="nombre" required>
+    </label>
+
+    <label>
+      Correo electrónico:
+      <input type="email" id="correo" required>
+    </label>
+
+    <label>
+      Edad:
+      <input type="number" id="edad" required>
+    </label>
+
+    <label>
+      Género:
+      <select id="genero">
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </label>
+
+    <button type="button" onclick="mostrarDatos()">Registrar</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="script.js"></script>
+
+</body>
+</html>
