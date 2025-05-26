@@ -1,0 +1,149 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Olivo Concept Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="foro.css">
+</head>
+<body>
+    <!--INICIO cabecera de la pagina-->
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <a href="index.html"><img src="imagenes/logoolivo.png" alt="Logo Olivo Concept Store"></a>
+                    <h1 class="logo"><a href="index.html">Olivo Concept Store</a></h1>
+                </div>
+
+                <div class="container-user">
+                    <a href="carrito.html" id="cart-icon" aria-label="Ir al Carrito">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                    <div class="container-shopping-cart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars mobile-menu"></i>
+                <ul class="menu">
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="ropa.html">Ropa</a></li>
+                    <li><a href="olivokids.html">Olivo Kids</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
+                    <li><a href="skincare.html">Skincare</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="bolsasmochilas.html">Bolsas y Mochilas</a></li>
+                    <li><a href="velasjabones.html">Velas y Jabones</a></li>
+                    <li><a href="regalos.html">Obsequios</a></li>
+                    <li><a href="preguntasF.html">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--FIN cabecera de la pagina-->
+
+    <main class="main-content">
+        <section class="container top-products">
+            <h1 class="heading-1">Preguntas Frecuentes</h1>
+
+            <!-- Sección de Preguntas Frecuentes -->
+            <div class="faq-container">
+                <div class="faq-content">
+                    <div class="faq-item">
+                        <h3>¿Puedo rentar un espacio?</h3>
+                        <div class="faq-answer" data-answer="1">
+                            [Si, claro solo necesitamos tus datos y que tipo de espacion vas a requerir puedes vender lo que tu desees te recomendamos entrar a contactanos y comunicarte con el numero principal de Whatsapp]
+                        </div>
+                        <button class="toggle-answer" data-target="1">Mostrar respuesta</button>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Toda la ropa es nueva?</h3>
+                        <div class="faq-answer" data-answer="2">      
+                        [No, nosotros nos enfocamos en prendas de segunda mano pero si puedes lograr enocntra ropa totalmente nueva con la etiqueta como marca ademas de que son prendas unicas]
+                        </div>
+                        <button class="toggle-answer" data-target="2">Mostrar respuesta</button>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Si tengo un bazar puedo dejar paquetes con ustedes?</h3>
+                        <div class="faq-answer" data-answer="3">
+                        [Si, claro contactanos y te cotizaremos nuestro servicios]
+                        </div>
+                        <button class="toggle-answer" data-target="3">Mostrar respuesta</button>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Puedo apartar ropa?</h3>
+                        <div class="faq-answer" data-answer="4">
+                            [Si, puedes apartar ropa desde la tienda fisica o si deseas una prenda de la pagina web necesitamos que no lo hagas saber con nuestro proovedor en el numero de Whatsapp en la parte de apartados]
+                        </div>
+                        <button class="toggle-answer" data-target="4">Mostrar respuesta</button>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Puedo cambiar la ropa si no me llega a quedar?</h3>
+                        <div class="faq-answer" data-answer="5">
+                            [Necesitamos saber si en este caso la ropa es nueva y checar si no hubo daño previo a la prenda pero de no ser asi con gusto te cambiamos tu prenda de igual costo o te haremos una oferta de venta]
+                        </div>
+                        <button class="toggle-answer" data-target="5">Mostrar respuesta</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Comentarios y Foro -->
+            <div class="interaction-section">
+                <!-- Recuadro de Comentarios -->
+                <div class="comment-box">
+                    <h2>Déjanos tu comentario</h2>
+                    <form id="comment-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comentario">Comentario:</label>
+                            <textarea id="comentario" name="comentario" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Comentario</button>
+                    </form>
+                </div>
+
+                <!-- Recuadro del Foro -->
+                <div class="forum-box">
+                    <h2>Nuestro Foro</h2>
+                    <p class="forum-content">
+                        Únete a nuestra comunidad en WhatsApp para compartir opiniones, hacer preguntas y conocer las últimas novedades.
+                    </p>
+                    <a href="https://chat.whatsapp.com/Eebv69kdPNULuDtkAeQy34" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Unirse al Foro
+                    </a>
+                    <div class="forum-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--INICIO footer-->
+    <footer class="footer">
+        <div class="container copyright-section">
+        <p>&copy; Proyecto desarrollado para la materia de Programación Web.</p>
+        </div>
+    </footer>
+    <!--FIN footer-->
+<script src="ternurin.js"></script>
+    <script src="foro.js"></script>
+</body>
+</html>

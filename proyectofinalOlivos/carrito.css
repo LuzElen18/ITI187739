@@ -1,0 +1,347 @@
+/* Importa las variables del CSS principal */
+@import url('estilos.css');
+
+/* Cart Page Styles */
+.cart-page {
+    min-height: 70vh; /* Asegura que la página tenga al menos esta altura */
+    padding: 4rem 0; /* Espaciado superior e inferior */
+}
+
+.cart-title {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Columna de ítems más ancha que el resumen */
+    gap: 4rem; /* Espacio entre las columnas */
+    max-width: 140rem; /* Ancho máximo para el contenedor del carrito */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 2rem; /* Espaciado lateral en el contenedor */
+}
+
+.cart-items-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.cart-summary {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content; /* Se ajusta al contenido */
+    position: sticky; /* Se mantiene al hacer scroll */
+    top: 2rem; /* Distancia desde la parte superior al hacer scroll */
+}
+
+/* Estilos para cada item en el carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espacio entre los elementos del item */
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee; /* Línea separadora */
+    position: relative; /* Para posicionar el botón de eliminar si fuera necesario */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* No hay borde en el último item */
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Recorta la imagen para que quepa */
+    border-radius: 0.5rem;
+}
+
+.item-details {
+    flex-grow: 1; /* Permite que los detalles ocupen el espacio restante */
+}
+
+.item-details h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.item-details .price {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que los botones se encojan */
+}
+
+.quantity-btn:hover {
+    background-color: #92b95c; /* Un tono un poco más oscuro */
+}
+
+.quantity-display {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    min-width: 25px; /* Asegura un ancho mínimo para la cantidad */
+    text-align: center;
+}
+
+.remove-btn {
+    background: #dc3545; /* Rojo para eliminar */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+}
+
+.remove-btn:hover {
+    background-color: #c82333; /* Un rojo más oscuro */
+}
+
+/* Resumen del carrito */
+.cart-summary h3 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+}
+
+.summary-line span:first-child {
+    font-weight: 500;
+}
+
+.total-line {
+    font-size: 2rem;
+    font-weight: 700;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 3rem;
+}
+
+.checkout-btn:hover {
+    background-color: #92b95c;
+}
+
+.checkout-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.clear-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #6c757d; /* Gris para vaciar */
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+}
+
+.clear-cart-btn:hover {
+    background-color: #5a6268;
+}
+
+.clear-cart-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #666;
+    padding: 5rem 0;
+}
+
+/* ------------------------------------- */
+/* MEDIA QUERIES para Responsividad */
+/* ------------------------------------- */
+
+/* Tablet y dispositivos medianos (hasta 992px) */
+@media (max-width: 992px) {
+    .cart-container {
+        grid-template-columns: 1fr; /* Una sola columna: ítems arriba, resumen abajo */
+        gap: 3rem;
+    }
+
+    .cart-summary {
+        position: static; /* Deja de ser sticky en pantallas más pequeñas */
+        margin-top: 3rem;
+    }
+
+    .cart-item {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos */
+        text-align: center;
+        gap: 1.5rem; /* Menos espacio entre elementos */
+        padding: 1.5rem 0;
+    }
+
+    .cart-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item-details {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .quantity-controls {
+        width: 100%; /* Ocupa todo el ancho */
+        justify-content: center; /* Centra los botones de cantidad */
+    }
+
+    .remove-btn {
+        width: auto; /* El botón de eliminar se ajusta al contenido */
+        padding: 0.8rem 2rem;
+        /* Si quieres que ocupe todo el ancho en móvil */
+        /* width: 100%; */
+        /* justify-content: center; */
+    }
+}
+
+/* Dispositivos móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .cart-title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .cart-items-section,
+    .cart-summary {
+        padding: 2rem; /* Reduce el padding en las secciones */
+    }
+
+    .cart-item {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .cart-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-details h3 {
+        font-size: 1.6rem;
+    }
+
+    .item-details .price {
+        font-size: 1.4rem;
+    }
+
+    .quantity-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.6rem;
+    }
+
+    .quantity-display {
+        font-size: 1.4rem;
+    }
+
+    .remove-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .checkout-btn {
+        padding: 1.2rem;
+        font-size: 1.6rem;
+    }
+
+    .clear-cart-btn {
+        padding: 0.8rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* Ajuste fino para pantallas aún más pequeñas (ej: iPhone SE) */
+@media (max-width: 375px) {
+    .cart-title {
+        font-size: 2.5rem;
+    }
+    .cart-items-section, .cart-summary {
+        padding: 1.5rem;
+    }
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    .item-details {
+        width: 100%;
+        text-align: center;
+    }
+    .quantity-controls {
+        justify-content: center;
+    }
+    .remove-btn {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+    .checkout-btn, .clear-cart-btn {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}

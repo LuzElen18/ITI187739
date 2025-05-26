@@ -1,0 +1,195 @@
+/* Importa las variables del CSS principal */
+@import url('estilos.css');
+
+.form-page {
+    min-height: 70vh;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+}
+
+.checkout-form {
+    background: white;
+    border-radius: 1rem;
+    padding: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 70rem; /* Ancho máximo para el formulario */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas por defecto */
+    gap: 2.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.3rem rgba(178, 214, 126, 0.3); /* Un poco de sombra al enfocar */
+    outline: none;
+}
+
+/* El resumen de la compra en el formulario */
+.form-summary {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    background: var(--background-color);
+    border-radius: 0.8rem;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    border: 1px solid #e0e0e0;
+}
+
+.form-summary h3 {
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#form-cart-items {
+    max-height: 200px; /* Limita la altura para el scroll si hay muchos productos */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    margin-bottom: 1.5rem;
+    padding-right: 1rem; /* Espacio para la barra de scroll */
+}
+
+.form-cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.form-cart-item:last-child {
+    border-bottom: none;
+}
+
+.form-summary .summary-line {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 2px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.generate-pdf-btn {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    display: block;
+    width: 100%;
+    padding: 1.8rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 3rem;
+}
+
+.generate-pdf-btn:hover {
+    background-color: #92b95c;
+}
+
+/* Responsividad para formulario.css */
+@media (max-width: 768px) {
+    .checkout-form {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+        padding: 3rem;
+        gap: 2rem;
+    }
+
+    .form-title {
+        font-size: 3.5rem;
+    }
+
+    .generate-pdf-btn {
+        padding: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .form-summary {
+        padding: 2rem;
+    }
+
+    .form-summary h3 {
+        font-size: 2rem;
+    }
+
+    .form-cart-item {
+        font-size: 1.4rem;
+    }
+
+    .form-summary .summary-line {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .checkout-form {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .generate-pdf-btn {
+        padding: 1.3rem;
+        font-size: 1.6rem;
+    }
+
+    .form-summary {
+        padding: 1.5rem;
+    }
+}

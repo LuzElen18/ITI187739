@@ -1,0 +1,240 @@
+/* Importa las variables del CSS principal si es necesario */
+@import url('estilos.css');
+
+:root {
+    --primary-color: #b2d67e;
+    --background-color: #eff3ea;
+    --dark-color: black;
+    --button-color: #b2d67e; /* Color para los botones de agregar al carrito */
+    --button-hover-color: #9ecc6a; /* Color para el hover del botón (un poco más oscuro) */
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estructura principal */
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto 4rem; /* El primer '0' asegura que no haya margen superior en el contenedor mismo */
+    padding: 0 15px;
+}
+
+.faq-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-item h3 {
+    font-size: 2rem;
+    color: #94b467;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item h3::after {
+    content: '+';
+    font-size: 1.8rem;
+}
+
+.faq-item.active h3::after {
+    content: '-';
+}
+
+.faq-answer {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #555;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    margin-top: 1.5rem;
+}
+
+.toggle-answer {
+    display: none; /* Ocultamos el botón ya que usamos el h3 como toggle */
+}
+
+/* Sección de interacción */
+.interaction-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    margin-bottom: 4rem;
+}
+
+.comment-box, .forum-box {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.comment-box h2, .forum-box h2 {
+    font-size: 2.2rem;
+    color: #94b467;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #94b467;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #7fa35a;
+}
+
+.forum-content {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 100%;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1da851;
+}
+
+.whatsapp-btn i {
+    margin-right: 1rem;
+}
+
+.forum-image {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.forum-image img {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .faq-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-answer {
+        font-size: 1.4rem;
+    }
+    
+    .comment-box, .forum-box {
+        padding: 20px;
+    }
+
+    .comment-box h2, .forum-box h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-content {
+        padding: 20px 15px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.6rem;
+    }
+    
+    .faq-answer {
+        font-size: 1.3rem;
+    }
+    
+    .form-group label {
+        font-size: 1.4rem;
+    }
+    
+    .form-group input, .form-group textarea {
+        font-size: 1.4rem;
+    }
+    
+    .submit-btn, .whatsapp-btn {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+    }
+    
+    .forum-image img {
+        max-width: 150px;
+    }
+}

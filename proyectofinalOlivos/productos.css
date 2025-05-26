@@ -1,0 +1,215 @@
+/* Importa las variables del CSS principal si es necesario */
+@import url('estilos.css');
+
+:root {
+    --primary-color: #b2d67e;
+    --background-color: #eff3ea;
+    --dark-color: black;
+    --button-color: #b2d67e; /* Color para los botones de agregar al carrito */
+    --button-hover-color: #9ecc6a; /* Color para el hover del botón (un poco más oscuro) */
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ********************************** */
+/* TOP PRODUCTS                       */
+/* ********************************** */
+
+#cuenta-carrito {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 100%;
+    display: inline-block;
+    width: 20px;
+    line-height: 20px;
+    aspect-ratio: 1;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.top-products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.top-products h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de productos: Usa Grid para un mejor control en todas las pantallas */
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Columnas responsivas */
+    gap: 3rem;
+    justify-items: center; /* Centra las tarjetas dentro de sus columnas */
+    padding: 0 2rem; /* Espacio a los lados del contenedor */
+    max-width: 120rem; /* Limita el ancho máximo del contenedor de productos */
+    margin: 0 auto; /* Centra el contenedor de productos */
+}
+
+/* Tarjeta de producto */
+.card-product {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 100%; /* Ocupa el 100% del espacio de su celda de grid */
+    max-width: 35rem; /* Máximo ancho para que no se hagan muy grandes */
+    transition: transform 0.3s ease; /* Efecto de hover suave */
+}
+
+.card-product:hover {
+    transform: translateY(-0.5rem); /* Pequeño levantamiento al hacer hover */
+}
+
+.card-product .container-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-product img:hover {
+    transform: scale(1.05);
+}
+
+.content-card-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-grow: 1; /* Permite que este contenedor crezca y empuje el botón hacia abajo */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos si es necesario */
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem; /* Ajuste pequeño para el espacio */
+}
+
+.content-card-product h3 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin: 0;
+    min-height: 5.4rem; /* Altura mínima para que el texto no se salte y el botón no se mueva */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas de texto */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-card-product .price {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    margin-bottom: 1rem; /* Espacio antes del botón */
+}
+
+/* Estilos para el botón "Agregar al Carrito" */
+.btn-agregar {
+    background-color: var(--button-color); /* Usa la nueva variable */
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadí transform para hover */
+    display: flex; /* Asegura que siempre sea visible */
+    align-items: center;
+    justify-content: center; /* Centra el texto y el ícono dentro del botón */
+    gap: 1rem;
+    margin-top: auto; /* Empuja el botón hacia la parte inferior del content-card-product */
+    width: 100%; /* Ocupa todo el ancho disponible en la tarjeta */
+}
+
+.btn-agregar:hover {
+    background-color: var(--button-hover-color); /* Usa la nueva variable */
+    transform: translateY(-0.2rem); /* Pequeño levantamiento al hacer hover */
+}
+
+.btn-agregar i {
+    font-size: 1.8rem;
+}
+
+
+/* ********************************** */
+/* MEDIA QUERIES (PARA RESPONSIVIDAD) */
+/* ********************************** */
+
+/* Para tablets (768px a 991px) */
+@media (max-width: 991px) {
+    .container-products {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Mantiene la adaptabilidad */
+        gap: 2rem; /* Ajustar el espacio entre productos */
+    }
+    .card-product {
+        max-width: none; /* Permite que se ajusten mejor al grid */
+    }
+}
+
+
+/* Para móviles (hasta 767px) */
+@media (max-width: 767px) {
+    .container-products {
+        grid-template-columns: 1fr; /* Una sola columna en móviles muy pequeños */
+        padding: 0 1.5rem;
+    }
+
+    .card-product {
+        width: 100%;
+        max-width: 320px; /* Un máximo para que no se hagan demasiado anchos en móviles grandes */
+        padding: 1.5rem;
+    }
+
+    .card-product .container-img {
+        height: 180px;
+    }
+
+    .content-card-product h3 {
+        font-size: 1.8rem;
+    }
+
+    .content-card-product .price {
+        font-size: 2rem;
+    }
+
+    .btn-agregar {
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+    }
+}
+/* ... (Deja el resto de tu CSS de productos.css aquí) ... */

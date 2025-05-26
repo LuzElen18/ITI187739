@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito - Olivo Concept Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="carrito.css">
+
+    <script src="https://kit.fontawesome.com/93eccfeecd.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <img src="imagenes/logoolivo.png" alt="Logo Olivo Concept Store">
+                    <h1 class="logo"><a href="index.html">Olivo Concept Store</a></h1>
+                </div>
+                <div class="container-user">
+                    
+                    <a href="carrito.html" id="cart-icon" aria-label="Ir al Carrito">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="ropa.html">Ropa</a></li>
+                    <li><a href="olivokids.html">Olivo Kids</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
+                    <li><a href="skincare.html">Skincare</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="bolsasmochilas.html">Bolsas y Mochilas</a></li>
+                    <li><a href="velasjabones.html">Velas y Jabones</a></li>
+                    <li><a href="regalos.html">Obsequios</a></li>
+                    <li><a href="preguntasF.html">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <h2 class="cart-title">Tu Carrito de Compras</h2>
+        <div class="cart-container">
+            <section class="cart-items-section">
+                <div id="cart-items-container">
+                    </div>
+                <button class="clear-cart-btn" onclick="clearCart()">Vaciar Carrito</button>
+            </section>
+
+            <section class="cart-summary">
+                <h3>Resumen del Pedido</h3>
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-price">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Envío:</span>
+                    <span>A calcular</span>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Total:</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn">Finalizar Compra</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">Información de Contacto</p>
+                    <ul>
+                        <li>Teléfono: 4442308805</li>
+                    </ul>
+                    <div class="social-icons">
+                        <span class="instagram">
+                            <a href="https://www.instagram.com/olivo.conceptstore" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright-section">
+        <p>&copy; Proyecto desarrollado para la materia de Programación Web.</p>
+        </div>
+    </footer>
+
+    <script src="productos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        renderCartItems();
+        updateCartSummary();
+    });
+
+    function renderCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        cartItemsContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+
+        let cart = localStorage.getItem('cart');
+        cart = cart ? JSON.parse(cart) : [];
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p class="empty-cart-message">Tu carrito está vacío. ¡Añade algunos productos!</p>';
+            document.querySelector('.checkout-btn').disabled = true;
+            document.querySelector('.clear-cart-btn').disabled = true;
+            document.getElementById('subtotal-price').textContent = '$0.00';
+            document.getElementById('total-price').textContent = '$0.00';
+            return;
+        }
+
+        document.querySelector('.checkout-btn').disabled = false;
+        document.querySelector('.clear-cart-btn').disabled = false;
+
+        const groupedCart = {};
+        cart.forEach(item => {
+            if (groupedCart[item.name]) {
+                groupedCart[item.name].quantity++;
+            } else {
+                groupedCart[item.name] = { ...item, quantity: 1 };
+            }
+        });
+
+        for (const productName in groupedCart) {
+            const item = groupedCart[productName];
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.dataset.productName = item.name;
+
+            itemDiv.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p class="price">$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn decrease" onclick="updateQuantity('${item.name}', -1)">-</button>
+                    <span class="quantity-display">${item.quantity}</span>
+                    <button class="quantity-btn increase" onclick="updateQuantity('${item.name}', 1)">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeItem('${item.name}')">Eliminar</button>
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+        }
+    }
+
+    function updateCartSummary() {
+        let cart = localStorage.getItem('cart');
+        cart = cart ? JSON.parse(cart) : [];
+
+        const groupedCart = {};
+        cart.forEach(item => {
+            if (groupedCart[item.name]) {
+                groupedCart[item.name].quantity++;
+            } else {
+                groupedCart[item.name] = { ...item, quantity: 1 };
+            }
+        });
+
+        let subtotal = 0;
+        for (const productName in groupedCart) {
+            const item = groupedCart[productName];
+            subtotal += item.price * item.quantity;
+        }
+
+        document.getElementById('subtotal-price').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('total-price').textContent = `$${subtotal.toFixed(2)}`;
+    }
+
+    function updateQuantity(productName, change) {
+        let cart = localStorage.getItem('cart');
+        cart = cart ? JSON.parse(cart) : [];
+
+        let productIndices = [];
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].name === productName) {
+                productIndices.push(i);
+            }
+        }
+
+        if (change === 1) {
+            const productToAdd = cart[productIndices[0]];
+            if (productToAdd) {
+                cart.push({ ...productToAdd });
+            }
+        } else if (change === -1) {
+            if (productIndices.length > 0) {
+                cart.splice(productIndices[productIndices.length - 1], 1);
+            }
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
+        updateCartSummary();
+    }
+
+    function removeItem(productName) {
+        let cart = localStorage.getItem('cart');
+        cart = cart ? JSON.parse(cart) : [];
+
+        cart = cart.filter(item => item.name !== productName);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
+        updateCartSummary();
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        renderCartItems();
+        updateCartSummary();
+        alert('¡Tu carrito ha sido vaciado!');
+    }
+
+    // REDIRIGIR AL FORMULARIO EN LUGAR DE MOSTRAR UN ALERT
+    document.querySelector('.checkout-btn').addEventListener('click', () => {
+        // Guardamos el total del carrito para usarlo en la página del formulario
+        const totalAmount = parseFloat(document.getElementById('total-price').textContent.replace('$', ''));
+        localStorage.setItem('totalAmount', totalAmount.toFixed(2));
+
+        window.location.href = 'formulario.html';
+    });
+</script>
+
+<script src="ternurin.js"></script>
+</body>
+</html>

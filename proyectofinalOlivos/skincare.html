@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Olivo Bazar - Skincare</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="productos.css"> <script src="https://kit.fontawesome.com/93eccfeecd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <img src="imagenes/logoolivo.png" alt="Logo Olivo Concept Store">
+                    <h1 class="logo"><a href="index.html">Olivo Concept Store</a></h1>
+                </div>
+                <div class="container-user">
+                    
+                    <a href="carrito.html" id="cart-icon" aria-label="Ir al Carrito">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                    <div class="container-shopping-cart">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="ropa.html">Ropa</a></li>
+                    <li><a href="olivokids.html">Olivo Kids</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
+                    <li><a href="skincare.html">Skincare</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="bolsasmochilas.html">Bolsas y Mochilas</a></li>
+                    <li><a href="velasjabones.html">Velas y Jabones</a></li>
+                    <li><a href="regalos.html">Obsequios</a></li>
+                    <li><a href="preguntasF.html">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="main-content">
+        <section class="container top-products">
+            <h2>Skincare</h2>
+            <div class="container-products">
+                    
+                <div class="card-product"
+                     data-id="skincare-001"
+                     data-name="Paquete de skincare"
+                     data-price="400"
+                     data-image="imagenes/Paquete de skincare.jpg">
+                    <div class="container-img">
+                        <img src="imagenes/Paquete de skincare.jpg" alt="Paquete de skincare"/>    
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Paquete de skincare</h3>
+                        <p class="price">$400</p>
+                        <button class="btn-agregar" onclick="addToCart('Paquete de skincare', 'imagenes/Paquete de skincare.jpg', '$400')">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-product"
+                     data-id="skincare-002"
+                     data-name="Rodillo para la cara"
+                     data-price="199"
+                     data-image="imagenes/Rodillo para la cara.jpg">
+                    <div class="container-img">
+                        <img src="imagenes/Rodillo para la cara.jpg" alt="Rodillo para la cara"/>    
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Rodillo para la cara</h3>
+                        <p class="price">$199</p>
+                        <button class="btn-agregar" onclick="addToCart('Rodillo para la cara', 'imagenes/Rodillo para la cara.jpg', '$199')">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-product"
+                     data-id="skincare-003"
+                     data-name="Tonico"
+                     data-price="600"
+                     data-image="imagenes/tonico.jpg">
+                    <div class="container-img">
+                        <img src="imagenes/tonico.jpg" alt="tonico"/>    
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Tonico</h3>
+                        <p class="price">$600</p>
+                        <button class="btn-agregar" onclick="addToCart('Tonico', 'imagenes/tonico.jpg', '$600')">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+<footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">Información de Contacto</p>
+                    <ul>
+                        <li>Teléfono: 4442308805</li>
+                    </ul>
+                    <div class="social-icons">
+                        <span class="instagram">
+                            <a href="https://www.instagram.com/olivo.conceptstore" target="_blank">
+                            <i class="fa-brands fa-instagram"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright-section">
+        <p>&copy; Proyecto desarrollado para la materia de Programación Web.</p>
+        </div>
+    </footer>
+    <script src="ternurin.js"></script>
+<script src="productos.js"></script>
+</body>
+</html>

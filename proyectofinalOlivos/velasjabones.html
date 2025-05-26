@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Velas y Jabones</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="productos.css">
+	<script src="https://kit.fontawesome.com/93eccfeecd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!--INICIO cabecera de la pagina-->
+	<header>
+
+		<div class="container-hero">
+    	    <div class="container hero">
+	            <div class="container-logo">
+            	    <img src="imagenes/logoolivo.png" alt="Logo Olivo Concept Store">
+        	        <h1 class="logo"><a href="index.html">Olivo Concept Store</a></h1>
+    	        </div>
+	            <div class="container-user">
+                	
+            	    <a href="carrito.html" id="cart-icon" aria-label="Ir al Carrito">
+        	            <i class="fa-solid fa-basket-shopping"></i>
+    	            </a>
+	                <div class="container-shopping-cart">
+                	</div>
+            	</div>
+        	</div>
+    	</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				<i class="fa-solid fa-bars"></i>
+				<ul class="menu">
+					<li><a href="contactanos.html">Contactanos</a></li>
+					<li><a href="ropa.html">Ropa</a></li>
+					<li><a href="olivokids.html">Olivo Kids</a></li>
+                    <li><a href="maquillaje.html">Maquillaje</a></li>
+                    <li><a href="skincare.html">Skincare</a></li>
+                    <li><a href="perfumes.html">Perfumes</a></li>
+                    <li><a href="bolsasmochilas.html">Bolsas y Mochilas</a></li>
+                    <li><a href="velasjabones.html">Velas y Jabones</a></li>
+                    <li><a href="regalos.html">Obsequios</a></li>
+                    <li><a href="preguntasF.html">Preguntas frecuentes</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
+<!--FIN cabecera de la pagina-->
+
+<!--Inicio de productos-->
+	<main class="main-content">
+
+		<section class="container top-products">
+			<h2>Velas y Jabones</h2>
+			<div class="container-products">
+				<div class="card-product"
+					 data-id="jabones-001"
+					  data-name="Tratamiento capilar"
+					  data-price="180"
+					  data-image="imagenes/jabones1.jpeg">
+					<div class="container-img">
+						<img src="imagenes/jabones1.jpeg" alt="Tratamiento capilar"/>
+					</div>
+					<div class="content-card-product">
+						<div class="stars"><!--dentro de este div se modifican las estrellas como calificacion-->
+							<i class="fa-solid fa-star"></i><!--esta es completa-->
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i><!--esta ya es vacia-->
+						</div>
+					<h3>Tratamiento capilar</h3><!--aqui es el nombre del producto-->
+					<p class="price">$180</p><!--aqui ponen el precio del producto-->
+					<button class="btn-agregar" onclick="addToCart('Tratamiento capilar','imagenes/jabones1.jpeg','$180')">
+						<i class="fa-solid fa-basket-shopping"></i>
+					</button>
+					</div>
+				</div>
+				<!-- Fin producto 1-->
+			</div>
+		</section>
+
+
+	</main>
+<!--Fin de productos-->
+
+
+<!--INICIO footer-->
+	<footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<p class="title-footer">Información de Contacto</p>
+						<ul>
+							<li>Teléfono: 4442308805</li>
+						</ul>
+						<div class="social-icons">
+							<span class="instagram">
+								<a href="https://www.instagram.com/olivo.conceptstore" target="_blank">
+								<i class="fa-brands fa-instagram"></i></a>
+							</span>
+						</div>
+					</div>
+				
+				</div>
+
+				
+			</div>
+			<div class="container copyright-section">
+        <p>&copy; Proyecto desarrollado para la materia de Programación Web.</p>
+        </div>
+		</footer>
+<!--FIN footer-->
+<script src="ternurin.js"></script>
+<script src="productos.js"></script>
+</body>
+
+
+<script src="https://kit.fontawesome.com/93eccfeecd.js" crossorigin="anonymous"></script>
+</html>
